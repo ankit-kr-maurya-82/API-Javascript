@@ -1,65 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Sign Up — ShopClone</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
-<body class="auth-page">
-  <main class="auth-card">
-    <h1>Create your account</h1>
-
-    <form id="signupForm" class="auth-form">
-      <input id="su-name" type="text" placeholder="Full name" required />
-      <input id="su-email" type="email" placeholder="Email address" required />
-      <input id="su-password" type="password" placeholder="Password (min 6 chars)" minlength="6" required />
-      <button type="submit" class="primary-btn">Create account</button>
-    </form>
-
-    <p class="muted">Already have an account? <a href="login.html">Sign in</a></p>
-    <p id="msg" class="muted"></p>
-  </main>
-
-  <script src="script.js"></script>
-  <script>
-    // Signup handling
-    const signupForm = document.getElementById('signupForm');
-    const msg = document.getElementById('msg');
-
-    signupForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const name = document.getElementById('su-name').value.trim();
-      const email = document.getElementById('su-email').value.trim().toLowerCase();
-      const password = document.getElementById('su-password').value;
-
-      // simple validation
-      if (!name || !email || password.length < 6) {
-        msg.textContent = 'Please fill correctly.';
-        msg.style.color = '#d32f2f';
-        return;
-      }
-
-      // read users array from localStorage
-      const users = JSON.parse(localStorage.getItem('sc_users') || '[]');
-      if (users.find(u => u.email === email)) {
-        msg.textContent = 'Email already registered. Please login.';
-        msg.style.color = '#d32f2f';
-        return;
-      }
-
-      users.push({ name, email, password });
-      localStorage.setItem('sc_users', JSON.stringify(users));
-      msg.textContent = 'Account created. Redirecting to login...';
-      msg.style.color = '#2e7d32';
-
-      setTimeout(() => {
-        window.location.href = 'login.html';
-      }, 1200);
-    });
-  </script>
-  <script>
-    console.log("gi")
-  </script>
+<body>
+  
 </body>
 </html>
