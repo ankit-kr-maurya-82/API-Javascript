@@ -14,7 +14,7 @@ function checkNumber(num) {
 
 checkNumber(10);
 checkNumber(11);
-// ```
+// ```/
 
 // 3. Explanation
 //    - We create a function `checkNumber` that takes a number `num`.
