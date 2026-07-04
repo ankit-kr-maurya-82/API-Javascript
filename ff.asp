@@ -6,6 +6,3 @@ Response.Write("Hello World!")
 %>
 </body>
 </html>
-
-<!--  -->\
-  bg
