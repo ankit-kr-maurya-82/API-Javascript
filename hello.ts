@@ -5,3 +5,5 @@ function greet(name: string){
 // comments
 
 greet("World")
+
+greet("World")
